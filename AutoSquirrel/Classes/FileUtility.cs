@@ -28,7 +28,7 @@ namespace AutoSquirrel
                         TypeNameHandling = TypeNameHandling.All
                     };
                     if (typeof(TRet) == typeof(AutoSquirrelModel)) {
-                        serializer.Binder = new AutoSquirrelBindAll();
+                        SerializationBinder binder = new AutoSquirrelBindAll();
                     }
 
                     return (TRet)serializer.Deserialize(file, typeof(TRet));
